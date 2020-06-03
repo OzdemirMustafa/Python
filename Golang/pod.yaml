@@ -1,0 +1,28 @@
+qwiklabs-gcp-02-ea62c297f164
+
+docker tag valkyrie-app:v0.0.1 gcr.io/qwiklabs-gcp-02-ea62c297f164/valkyrie-app:v0.0.1
+
+docker push gcr.io/qwiklabs-gcp-02-ea62c297f164/valkyrie-app:v0.0.1
+
+
+sed -i s#IMAGE_HERE#gcr.io/qwiklabs-gcp-02-ea62c297f164/valkyrie-app:v0.0.1#g k8s/deployment.yaml
+
+
+
+
+gcloud container clusters get-credentials valkyrie-dev --z=us-east1-d
+
+
+docker build -t gcr.io/qwiklabs-gcp-02-ea62c297f164/valkyrie-app:v0.0.2 .
+
+docker push gcr.io/qwiklabs-gcp-02-ea62c297f164/valkyrie-app:v0.0.2
+
+
+DpQdexPid1
+
+
+git config --global user.email “mustfaozdmir@gmail.com”
+git config --global user.name “Mustafa”
+git add .
+git commit -m “build pipeline init”
+git push
